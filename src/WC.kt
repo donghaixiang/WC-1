@@ -105,6 +105,7 @@ fun outputResult(input: String, cc: Int, wc: Int, lc: Int, of: File) {
     if (of.exists() && of.isFile) {
         of.delete()
     }
+
     println("write the result to ${of.absolutePath}")
     of.writeText(sb.toString())
 }
