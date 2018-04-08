@@ -1,3 +1,5 @@
+package com.dashmrl.wc
+
 /**
  * Author    dashmrl
  * Time      22:06

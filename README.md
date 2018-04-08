@@ -32,7 +32,7 @@
 - 参数枚举类 
 
   ```kotlin
-  enum class Options(val value: String) {
+  enum class com.dashmrl.wc.Options(val value: String) {
       C("-c"),// 字符数
       W("-w"),// 单词数
       L("-l"),// 行数
@@ -43,7 +43,7 @@
 - 参数检查函数 
 
   ```kotlin
-  fun checkArgs(pindex: Int, pc: Int, msg: String): Boolean {
+  fun com.dashmrl.wc.checkArgs(pindex: Int, pc: Int, msg: String): Boolean {
       if (pindex <= -1) return false
       if (pindex + 1 == pc) {
           throw IllegalArgumentException(msg)
@@ -56,7 +56,7 @@
 - 单词统计函数 
 
   ```
-  fun calWordCount(ifile: File): Int {
+  fun com.dashmrl.wc.calWordCount(ifile: File): Int {
       println("start calculating word count")
       return ifile.readLines().sumBy {
           it.split(
@@ -70,16 +70,16 @@
 - 输出结果函数 
 
   ```Kotlin
-  fun outputResult(input: String, cc: Int, wc: Int, lc: Int, of: File) {
+  fun com.dashmrl.wc.outputResult(input: String, cc: Int, wc: Int, lc: Int, of: File) {
       val sb = StringBuilder(input)
       if (cc != -1) {
-          sb.append(",").append(Options.C.value).append(":").append(cc)
+          sb.append(",").append(com.dashmrl.wc.Options.C.value).append(":").append(cc)
       }
       if (wc != -1) {
-          sb.append(",").append(Options.W.value).append(":").append(wc)
+          sb.append(",").append(com.dashmrl.wc.Options.W.value).append(":").append(wc)
       }
       if (lc != -1) {
-          sb.append(",").append(Options.L.value).append(":").append(lc)
+          sb.append(",").append(com.dashmrl.wc.Options.L.value).append(":").append(lc)
       }
       if (of.exists() && of.isFile) {
           of.delete()
