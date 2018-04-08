@@ -13,11 +13,11 @@ import java.io.File
  */
 
 fun main(args: Array<String>) {
+    val checker = ArgChecker()
     val pc = args.size
     if (pc < 2) {
-        throw IllegalArgumentException("at least two arguments required")
+        throw IllegalArgumentException("no enough args!!")
     }
-    val checker = ArgChecker()
     var cc = -1
     var wc = -1
     var lc = -1
@@ -28,7 +28,6 @@ fun main(args: Array<String>) {
     for (value in Options.values()) {
         val index = args.indexOf(value.value)
         if (index == -1) {
-
             continue
         }
         when (value) {
